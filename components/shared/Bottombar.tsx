@@ -20,7 +20,7 @@ const Bottombar = () => {
             <Link
               href={link.route}
               key={link.label}
-              className={`bottomsidebar_link ${
+              className={`bottomsidebar_link flex flex-col justify-center items-center ${
                 isActive && "bg-blue"
               } hover:bg-blue p-1 rounded-md transition duration-300`}
             >

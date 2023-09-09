@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body style={{fontSize: '16px'}} className={`${inter.className} bg-dark-1 text-white`}>
+        <body className={`bg-dark-1 text-white`}>
           <Topbar />
           <main className="flex flex-row ">
             <LeftSidebar />
@@ -41,3 +41,5 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
+
