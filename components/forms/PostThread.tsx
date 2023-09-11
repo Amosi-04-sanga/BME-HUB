@@ -15,7 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../ui/textarea";
 import { redirect, usePathname, useRouter } from "next/navigation";
 import { threadValidation } from "@/lib/validations/thread";
-import { createThread } from "@/lib/actions/thread,action";
+import { createThread } from "@/lib/actions/thread.action";
 
 const PostThread = ({ userId }: { userId: string }) => {
   const router = useRouter();

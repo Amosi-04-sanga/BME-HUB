@@ -1,4 +1,4 @@
-'use server'
+"use server";
 import { revalidatePath } from "next/cache";
 import Thread from "../models/thread.model";
 import User from "../models/user.model";
@@ -23,9 +23,9 @@ export const createThread = async ({
       community: null,
     });
 
-    User.findByIdAndUpdate(author, {
-      $push: { threads: createdThread._id },
-    });
+    const Author = await User.findById(author);
+    Author.threads.push(createdThread._id);
+    await Author.save();
 
     revalidatePath(path);
   } catch (error: any) {

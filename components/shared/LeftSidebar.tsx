@@ -11,8 +11,8 @@ const LeftSidebar = () => {
   const pathname = usePathname();
 
   return (
-    <section className="custom-scrollbar leftsidebar">
-      <div className="flex flex-1 w-full flex-col gap-6 px-6">
+    <section className="custom-scrollbar leftsidebar" style={{fontSize: '16px'}}>
+      <div className="flex flex-1 w-full flex-col gap-4 px-6">
         {sidebarLinks.map((link) => {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
@@ -22,7 +22,9 @@ const LeftSidebar = () => {
             <Link
               href={link.route}
               key={link.label}
-              className={`leftsidebar_link ${isActive && "bg-blue"} hover:bg-blue transition duration-300`}
+              className={`leftsidebar_link ${
+                isActive && "bg-blue"
+              } hover:bg-blue transition duration-300`}
             >
               <Image
                 width={24}
@@ -35,7 +37,7 @@ const LeftSidebar = () => {
           );
         })}
       </div>
-      
+
       <div className="mt-10 px-6">
         <SignedIn>
           <SignOutButton>
@@ -46,7 +48,7 @@ const LeftSidebar = () => {
                 src="/assets/logout.svg"
                 alt="logout"
               />
-        <p>logout</p>
+              <p>logout</p>
             </div>
           </SignOutButton>
         </SignedIn>

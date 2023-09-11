@@ -127,9 +127,9 @@ export const addCommentToThread = async (
   commentText: string,
   threadId: string,
   userId: string,
-  path: string,
+  path: string
 ) => {
-  connectToDB(); 
+  connectToDB();
 
   try {
     const originalThread = await Thread.findById(threadId);
@@ -144,9 +144,37 @@ export const addCommentToThread = async (
     const savedCommentThread = await commentThread.save();
     originalThread.children.push(savedCommentThread._id);
     await originalThread.save();
-   revalidatePath(path)
-
-  } catch (error) {
-    throw new Error(`ERROR in creating comments: ${error}`);
+    revalidatePath(path);
+  } catch (error: any) {
+    throw new Error(`ERROR in creating comments: ${error.message}`);
   }
 };
+
+
+export const fetchUserPosts = async (userId: string) => {
+  connectToDB();
+
+  try {
+    // TODO: populate community
+    const threads = await User.findOne({ id: userId }).populate({
+      path: "threads",
+      model: Thread,
+      populate: {
+        path: "children",
+        model: Thread,
+        populate: {
+          path: "author",
+          model: User,
+          select: "name image id",
+        },
+      },
+    });
+
+   return threads
+
+  } catch (error: any) {
+    throw new Error(`ERROR in fetching user threads: ${error.message}`);
+  }
+};
+
+

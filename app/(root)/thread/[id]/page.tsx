@@ -7,15 +7,15 @@ import { redirect } from "next/navigation";
 const page = async ({ params }: { params: { id: string } }) => {
   if (!params.id) return null;
 
+  // return null if no user
   const user = await currentUser();
   if (!user) return null;
-  
-  const userInfo = await fetchUser(user.id)
-  if(!userInfo?.onboarded) redirect('/onboarding')
-  
+
+  const userInfo = await fetchUser(user.id);
+  if (!userInfo?.onboarded) redirect("/onboarding"); // to complete registration
 
   // fetch thread by id
-  const thread = await fetchThreadById(params.id)
+  const thread = await fetchThreadById(params.id);
  
   return (
     <section className="relative">
@@ -35,9 +35,28 @@ const page = async ({ params }: { params: { id: string } }) => {
       <div className="mt-7">
         <Comment
           threadId={thread.id}
-          currentUserImg={user.imageUrl}
+          currentUserImg={userInfo.image}
           currentUserId={JSON.stringify(userInfo._id)}
         />
+      </div>
+
+      <div className="mt-7">
+        {thread.children.map((childItem: any) => {
+          return (
+            <ThreadCard
+              key={childItem._id}
+              id={childItem._id}
+              currentUserId={user?.id}
+              parentId={childItem.parentId}
+              content={childItem.text}
+              author={childItem.author}
+              community={childItem.community}
+              createdAt={childItem.createdAt}
+              comments={childItem.children}
+              isComment
+            />
+          );
+        })}
       </div>
     </section>
   );

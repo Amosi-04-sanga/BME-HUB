@@ -13,6 +13,7 @@ module.exports = {
       padding: "2rem",
       screens: {
         "2xl": "1400px",
+        "sm": "500px"
       },
     },
     fontSize: {
@@ -52,7 +53,7 @@ module.exports = {
         },
       ],
       "heading4-medium": [
-        "20px",
+        "18px",
         {
           lineHeight: "140%",
           fontWeight: "500",

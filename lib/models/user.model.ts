@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   threads: [
     {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'threads'
+        ref: 'Thread'
     }
   ],
   onboarded: {
@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
   communities: [
     {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'communities'
+        ref: 'Communities'
     }
   ]
 });
