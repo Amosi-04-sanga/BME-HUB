@@ -67,6 +67,7 @@ const PostThread = ({ userId }: { userId: string }) => {
       }
     }
 
+
     await createThread({
       text: values.post,
       author: userId,

@@ -65,7 +65,7 @@ const ThreadCard = ({
           <div className="flex flex-col w-full">
             <div className="w-full h-full mb-4">
               {image && (
-                <img src={image} className="w-full h-[50vh] xs:h-[64vh]  sm:h-[80vh]" alt="post image" />
+                <img src={image} className="rounded-md w-full h-[50vh] xs:h-[64vh]  sm:h-[80vh]" alt="post image" />
               )}
             </div>
             <p className=""> {content} </p>
