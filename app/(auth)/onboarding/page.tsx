@@ -20,9 +20,8 @@ const page = async () => {
     <main className="flex flex-col max-w-3xl mx-auto justify-start px-10 py-20 text-light-2">
       <h1 className="head-text">onboarding</h1>
       <p className="mt-3 text-base-regular">complete a profile to use Thread</p>
-
       <section className="mt-10 bg-dark-2 p-10">
-        <AccountProfile user={userData} btnTitle="continue" />
+        <AccountProfile user={userData} />
       </section>
     </main>
   );

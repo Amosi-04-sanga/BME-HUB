@@ -6,21 +6,21 @@ import User from "../models/user.model";
 interface params {
   text: string;
   author: string;
-  communityId: string | null;
+  image: string;
   path: string;
 }
 
 export const createThread = async ({
   text,
   author,
-  communityId,
   path,
+  image,
 }: params) => {
   try {
     const createdThread = await Thread.create({
+      image,
       text,
       author,
-      community: null,
     });
 
     const Author = await User.findById(author);

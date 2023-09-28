@@ -12,34 +12,36 @@ import {
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { usePathname, useRouter } from "next/navigation";
-import { commentValidation } from "@/lib/validations/thread";
 import Image from "next/image";
 import { addCommentToThread } from "@/lib/actions/user.actions";
-
+import { commentValidation, postValidation } from "@/lib/validation/post";
+import { Textarea } from "../ui/textarea";
 
 interface props {
   threadId: string;
   currentUserId: string;
   currentUserImg: string;
+  currentUserName: string;
 }
 
-const Comment = ({ threadId, currentUserId, currentUserImg }: props) => {
+const Comment = ({ threadId, currentUserId, currentUserImg, currentUserName }: props) => {
   const router = useRouter();
   const pathname = usePathname();
 
   const form = useForm({
     resolver: zodResolver(commentValidation),
     defaultValues: {
-      thread: ""
+      post: "",
+      image: "",
     },
   });
 
   const onSubmit = async (values: z.infer<typeof commentValidation>) => {
     await addCommentToThread(
-      values.thread,
+      values.post,
       threadId,
       JSON.parse(currentUserId),
-      pathname,
+      pathname
     );
 
     form.reset();
@@ -50,23 +52,26 @@ const Comment = ({ threadId, currentUserId, currentUserImg }: props) => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="comment-form ">
         <FormField
           control={form.control}
-          name="thread"
+          name="post"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-2 w-full">
               <FormLabel className="text-base-semibold text-light-2">
-                <Image
-                  src={currentUserImg}
-                  alt="profile photo"
-                  width={48}
-                  height={48}
-                  className="rounded-full object-contain"
-                />
+                <div className="flex gap-4 items-center justify-end">
+                <div className=" w-14 h-14 rounded-full">
+                  <img
+                    src={currentUserImg}
+                    alt="profile photo"
+                    className="rounded-full w-full h-full"
+                  />
+                </div>
+                <p> {currentUserName} </p>
+                </div>
               </FormLabel>
               <FormControl className="no-focus border border-dark-4 bg-dark-3 text-light-1">
-                <input
-                  type="text"
+                <Textarea
+                  rows={4}
                   placeholder="comment..."
-                  className="no-focus text-light-1 outline-none p-4 rounded-xl"
+                  className="no-focus text-indigo-300 outline-none p-4 rounded-xl"
                   {...field}
                 />
               </FormControl>
@@ -74,7 +79,7 @@ const Comment = ({ threadId, currentUserId, currentUserImg }: props) => {
           )}
         />
 
-        <Button type="submit" className="bg-primary-500 comment-form_btn">
+        <Button type="submit" className="bg-primary-500 mx-auto block mt-2 ">
           Reply
         </Button>
       </form>

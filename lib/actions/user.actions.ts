@@ -1,5 +1,4 @@
 "use server";
-
 import { revalidatePath } from "next/cache";
 import User from "../models/user.model";
 import Thread from "../models/thread.model";

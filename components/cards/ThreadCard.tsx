@@ -1,6 +1,8 @@
+import { heart, reply, share } from "@/public/assets";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import moment from "moment";
 
 interface props {
   id: string;
@@ -10,13 +12,9 @@ interface props {
       image: string;
     };
   }[];
-  community: {
-    id: string;
-    name: string;
-    image: string;
-  } | null;
   createdAt: string;
   content: string;
+  image: string | "";
   author: {
     name: string;
     image: string;
@@ -30,67 +28,75 @@ const ThreadCard = ({
   id,
   currentUserId,
   comments,
-  community,
   createdAt,
   content,
+  image,
   author,
   parentId,
   isComment,
 }: props) => {
   return (
     <article
-      className={`flex flex-col rounded-xl p-7 w-full ${
-        isComment ? "px-0 sm:px-7" : "bg-dark-2"
-      }`}
+      className={`flex flex-col rounded-xl p-4 w-full bg-dark-2`}
     >
       <div className="flex justify-between items-start">
-        <div className="flex flex-row flex-grow flex-1 w-full gap-4">
-          <div className="flex flex-col items-center">
-            <Link href={`/profile/${author.id}`} className="relative w-11 h-11">
-              <Image
+        <div className="flex flex-col flex-grow flex-1 w-full gap-4 text-light-2">
+          <div className="flex gap-4 items-center">
+            <Link
+              href={`/community/profile/${author.id}`}
+              className="relative w-16 h-16 rounded-full bg-orange-500"
+            >
+              <img
                 src={author.image}
                 alt="profile photo"
-                fill
-                className="rounded-full cursor-pointer"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="rounded-full w-full h-full cursor-pointer"
               />
             </Link>
-            <div className="thread-card_bar" />
+            <div className="flex flex-col gap-2">
+              <Link href={`/community/profile/${author.id}`} className="w-fit">
+                <h4 className="">{author.name}</h4>
+              </Link>
+
+              <div className="text-light-3">{moment(createdAt).fromNow()}</div>
+            </div>
+            <div className="" />
           </div>
 
           <div className="flex flex-col w-full">
-            <Link href={`/profile/${author.id}`} className="w-fit">
-              <h4 className="">{author.name}</h4>
-            </Link>
-            <p className="text-light-2 text-small-regular"> {content} </p>
+            <div className="w-full h-full mb-4">
+              {image && (
+                <img src={image} className="w-full h-[50vh] xs:h-[64vh]  sm:h-[80vh]" alt="post image" />
+              )}
+            </div>
+            <p className=""> {content} </p>
             <div className="flex flex-col mt-5 gap-3">
-              <div className="flex gap-3.5">
-                <Image
-                  alt="heart"
-                  src="/assets/heart-gray.svg"
-                  width={24}
-                  height={24}
-                  className="cursor-pointer"
-                />
-                <Link href={`/thread/${id}`}>
+              <div className="flex gap-6">
+                <div className="flex gap-3">
                   <Image
-                    alt="reply"
-                    src="/assets/reply.svg"
-                    width={24}
-                    height={24}
+                    alt="heart"
+                    src={heart}
+                    width={20}
+                    height={20}
                     className="cursor-pointer"
                   />
+                  <p>23 likes</p>
+                </div>
+                <Link href={`/community/thread/${id}`}>
+                  <div className="flex gap-3">
+                    <Image
+                      alt="reply"
+                      src={reply}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>43 replies</p>
+                  </div>
                 </Link>
+
                 <Image
-                  alt="repost"
-                  src="/assets/repost.svg"
-                  width={24}
-                  height={24}
-                  className="cursor-pointer"
-                />
-                <Image
+                  src={share}
                   alt="share"
-                  src="/assets/share.svg"
                   width={24}
                   height={24}
                   className="cursor-pointer"

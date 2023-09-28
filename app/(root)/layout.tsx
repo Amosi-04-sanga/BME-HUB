@@ -1,20 +1,18 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import "../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import {
-  Bottombar,
-  LeftSidebar,
-  RightSidebar,
-  Topbar,
-} from "@/components/shared";
+import { ClerkProvider } from "@clerk/nextjs";
+import Topnav from "@/components/shared/Topnav";
+import Sidebar from "@/components/shared/Sidebar";
+import { Bottombar } from "@/components/shared";
 import { ThemeProvider } from "@/components/shared/theme-provider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Threads",
-  description: "A Nextjs 13.4 Meta Thread Application",
+  title: "BME hub",
+  description: "BME hub official website",
 };
 
 export default function RootLayout({
@@ -24,25 +22,22 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={`bg-dark-1 text-white`}>
-          <Topbar />
-          <main className="flex flex-row ">
-            <LeftSidebar />
-            <section className="main-container">
-              <div className="w-full max-w-4xl">
-                <ThemeProvider
-                  attribute="class"
-                  defaultTheme="system"
-                  enableSystem
-                >
-                  {children}
-                </ThemeProvider>
-              </div>
-            </section>
-            <RightSidebar />
-          </main>
-          <Bottombar />
+      <html suppressHydrationWarning={true} lang="en">
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Topnav />
+            <div className="flex">
+              <Sidebar />
+              <section className="bg-light-1 dark:bg-dark-3 transition duration-1000">
+                {children}
+              </section>
+            </div>
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

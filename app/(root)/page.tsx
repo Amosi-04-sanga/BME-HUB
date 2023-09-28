@@ -1,37 +1,29 @@
-import ThreadCard from "@/components/cards/ThreadCard";
-import { fetchPosts } from "@/lib/actions/user.actions";
-import { UserButton, currentUser } from "@clerk/nextjs";
+import ContactForm from "@/components/forms/ContactForm";
+import FQA from "@/components/forms/FQA";
+import SubscribeForm from "@/components/forms/SubscribeForm";
+import About from "@/components/shared/About";
+import Community from "@/components/shared/Community";
+import Footer from "@/components/shared/Footer";
+import Hero from "@/components/shared/Hero";
+import News from "@/components/shared/News";
+import Image from "next/image";
 
-export default async function Home() {
-  const results = await fetchPosts(1, 30);
-  const user = await currentUser();
 
-
+export default function Home() {
   return (
     <>
-      <h1 className="head-text text-left">top level threads!</h1>
-
-      <section className="flex flex-col gap-10 mt-8">
-        {results.posts.length === 0 ? (
-          <p>No Thread Found!</p>
-        ) : (
-          <>
-            {results.posts.map((post: any) => (
-              <ThreadCard
-                key={post._id}
-                id={post._id}
-                currentUserId={user?.id || ''}
-                parentId={post.parentId}
-                content={post.text}
-                author={post.author}
-                community={post.community}
-                createdAt={post.createdAt}
-                comments={post.children}
-              />
-            ))}
-          </>
-        )}
-      </section>
+      <Hero />
+      <div className="max-xs:w-[90vw] max-sm:w-[75vw] max-md:w-[80vw] mx-auto md:p-4">
+        <News />
+        <About />
+      </div>
+      <Community />
+      <div className="max-xs:w-[90vw] max-sm:w-[75vw] max-md:w-[80vw] mx-auto md:p-4">
+        <FQA />
+        <ContactForm />
+        <SubscribeForm/>
+      </div>
+      <Footer />
     </>
   );
 }
