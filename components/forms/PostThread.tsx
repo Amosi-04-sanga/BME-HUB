@@ -16,23 +16,26 @@ import { createThread } from "@/lib/actions/thread.action";
 import { postValidation } from "@/lib/validation/post";
 import { Textarea } from "../ui/textarea";
 import { isBase64Image } from "@/lib/utils";
-import { useUploadThing } from "@/lib/uploadthing";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { Input } from "../ui/input";
+import { useUploadThing } from "@/lib/uploadthing";
+
 
 const PostThread = ({ userId }: { userId: string }) => {
-  const router = useRouter();
-  const pathname = usePathname();
+
   const [files, setFiles] = useState<File[]>([]);
   const { startUpload } = useUploadThing("media");
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const form = useForm({
+
+  const form = useForm<z.infer<typeof postValidation>>({
     resolver: zodResolver(postValidation),
     defaultValues: {
+      image: "",
+      accountId: "",
       post: "",
-      accountId: userId,
-      image: ''
     },
   });
 
@@ -53,20 +56,23 @@ const PostThread = ({ userId }: { userId: string }) => {
       };
       filereader.readAsDataURL(file);
     }
+    console.log(files)
+    
   };
 
   async function onSubmit(values: z.infer<typeof postValidation>) {
-    const blob = values.image;
+
+  /*  const blob = values.image;
     const hasImageChanged = isBase64Image(blob);
     // for selected image
     if (hasImageChanged) {
       const imgRes = await startUpload(files);
-
+      
       if (imgRes && imgRes[0].url) {
         values.image = imgRes[0].url;
       }
-    }
-
+    } 
+     */
 
     await createThread({
       text: values.post,
@@ -97,9 +103,13 @@ const PostThread = ({ userId }: { userId: string }) => {
                   onChange={(e) => handleImage(e, field.onChange)}
                 />
               </FormControl>
-              <FormLabel className="w-full rounded-[50%] flex items-center justify-center">
+              <FormLabel className="w-full bg-blue-100 flex items-center justify-center">
                 {field.value ? (
-                  <img src={field.value} className="w-full h-[40vh] xs:h-[50vh]  sm:h-[60vh]" alt="post image" />
+                  <img
+                    src={field.value}
+                    alt="profile photo"
+                    className="object-contain max-h-[50vh]"
+                  />
                 ) : (
                   <Image
                     src="/assets/community/profile.svg"
