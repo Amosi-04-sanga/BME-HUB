@@ -8,7 +8,6 @@ import ProfileHeader from "./ProfileHeader";
 import RightSidebar from "./RightSidebar";
 import Sidebar from "./Sidebar";
 import ThreadsTabs from "./ThreadsTabs";
-import Topbar from "./Topbar";
 
 
 export {
@@ -20,7 +19,6 @@ export {
     Bottombar,
     LeftSidebar,
     RightSidebar,
-    Topbar,
     ThreadsTabs,
     ProfileHeader
 }
