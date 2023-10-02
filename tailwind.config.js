@@ -174,7 +174,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        "menu-light": "#333",
+        "menu-light": "rgb(12, 12, 59)",
         "menu-dark": "#222",
         "primary-500": "#877EFF",
         "btn-color": "#454E9A",

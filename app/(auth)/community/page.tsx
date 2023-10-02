@@ -1,3 +1,4 @@
+'use server'
 import ThreadCard from "@/components/cards/ThreadCard";
 import { fetchPosts } from "@/lib/actions/user.actions";
 import { UserButton, currentUser } from "@clerk/nextjs";

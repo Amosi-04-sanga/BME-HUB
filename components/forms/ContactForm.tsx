@@ -16,6 +16,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { subscribersValidation } from "@/lib/validation/subscribers";
 import { Textarea } from "../ui/textarea";
+import { Fade } from "react-awesome-reveal";
+
 
 const ContactForm = () => {
   const form = useForm<z.infer<typeof contactValidation>>({
@@ -29,6 +31,7 @@ const ContactForm = () => {
   const onSubmit = async (values: z.infer<typeof contactValidation>) => {
     //e.preventDefault()
     console.log(values);
+    form.reset()
   };
 
   const onSubscribe = (values: z.infer<typeof subscribersValidation>) => {
@@ -36,7 +39,9 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="mt-20 flex flex-col">
+     <>
+       <Fade>
+       <section className="mt-20 flex flex-col">
       <div className="text-center mt-4">
         <h2 className="half-underline inline-block font-bold">CONTACT US</h2>
       </div>
@@ -94,7 +99,7 @@ const ContactForm = () => {
                   </FormLabel>
                   <FormControl className="focus:outline-none">
                     <Textarea
-                      rows={10}
+                      rows={4}
                       className="outline-none border-none dark:bg-white"
                       {...field}
                     />
@@ -114,6 +119,8 @@ const ContactForm = () => {
         </Form>
       </div>
     </section>
+       </Fade>
+     </>
   );
 };
 

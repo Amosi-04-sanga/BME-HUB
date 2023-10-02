@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="max-xs:w-[90vw] max-sm:w-[75vw] max-md:w-[80vw] mx-auto md:p-4">
+      <div className="max-xs:w-[90vw] max-sm:w-[85vw] max-md:w-[70vw] mx-auto md:p-16">
         <News />
         <About />
       </div>
       <Community />
-      <div className="max-xs:w-[90vw] max-sm:w-[75vw] max-md:w-[80vw] mx-auto md:p-4">
+      <div className="max-xs:w-[90vw] max-sm:w-[85vw] max-md:w-[70vw] mx-auto md:p-16">
         <FQA />
         <ContactForm />
         <SubscribeForm/>

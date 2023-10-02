@@ -7,6 +7,7 @@ import { currentUser } from "@clerk/nextjs";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
+
 const page = async ({ params }: { params: { id: string } }) => {
   const user = await currentUser();
   if (!user) return null;
@@ -34,13 +35,13 @@ const page = async ({ params }: { params: { id: string } }) => {
                     <Image
                       src={tab.icon}
                       alt={`tab icon: ${tab.label}`}
-                      width={24}
-                      height={24}
+                      width={20}
+                      height={20}
                       className="object-contain mr-1"
                     />
                     <p className="max-sm:hidden">{tab.label}</p>
                     {tab.label === "Threads" && (
-                      <p className="text-light-2 ml-1 rounded-sm bg-light-4 px-2 py-1">
+                      <p className="text-light-2 ml-1 rounded-md bg-light-4 px-2 ">
                         {userInfo?.threads?.length} posts
                       </p>
                     )}

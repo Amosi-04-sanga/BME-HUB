@@ -15,19 +15,20 @@ async function Page() {
   const activity = await getActivities(userInfo._id);
 
   return (
-    <>
-      <h1 className='head-text'>Activity</h1>
+    <div className="block w-full">
+      <h1 className='uppercase text-center mt-10 font-bold'>members replied to your posts</h1>
 
-      <section className='mt-10 flex flex-col gap-5'>
+      <section className='flex flex-col gap-5 p-4 sm:px-20'>
         {activity.length > 0 ? (
           <>
             {activity.map((activity) => (
-              <Link key={activity._id} href={`/thread/${activity.parentId}`}>
+              <Link key={activity._id} href={`/community/thread/${activity.parentId}`}>
+                
                 <article className='activity-card'>
                   <Image
                     src={activity.author.image}
                     alt='user_logo'
-                    width={20}
+                    width={20} 
                     height={20}
                     className='rounded-full object-cover'
                   />
@@ -35,17 +36,17 @@ async function Page() {
                     <span className='mr-1 text-primary-500'>
                       {activity.author.name}
                     </span>{" "}
-                    replied to your thread
+                    replied to your post
                   </p>
                 </article>
               </Link>
             ))}
           </>
         ) : (
-          <p className='!text-base-regular text-light-3'>No activity yet</p>
+          <p className='!text-base-regular text-light-3'>No reply yet</p>
         )}
       </section>
-    </>
+    </div>
   );
 }
 

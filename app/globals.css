@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    overflow-x: hidde;
-    scroll-behavior: smooth;
+  overflow-x: hidde;
+  scroll-behavior: smooth;
 }
 
 .half-underline {
-    position: relative;
+  position: relative;
 }
 
 .half-underline::before {
@@ -24,6 +24,27 @@ body {
   content: "";
   background-color: rgba(27, 13, 111, 0.71);
   width: 40%;
-  height: 4px;  
+  height: 4px;
+
 }
 
+
+@layer components {
+.user-card {
+  @apply flex flex-col justify-between gap-4 max-xs:rounded-xl max-xs:bg-dark-3 max-xs:p-4 xs:flex-row xs:items-center;
+}
+
+.user-card_avatar {
+  @apply flex flex-1 items-start justify-start gap-3 xs:items-center;
+}
+
+.user-card_btn {
+  @apply h-auto min-w-[74px] rounded-lg bg-primary-500 text-[12px] text-light-1 !important;
+}
+
+.activity-card {
+    @apply flex items-center gap-2 rounded-md bg-dark-2 px-7 py-4;
+  }
+
+
+}

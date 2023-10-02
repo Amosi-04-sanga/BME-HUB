@@ -34,23 +34,16 @@ export const navLinks = [
   },
   {
     imgURL: library,
-    route: "/library",
+    route: "https://drive.google.com/drive/folders/1-6jFUw4EVmfMl2FX24Wi8N8VHfiIVCbf",
     label: "Library",
   },
-  {
-    imgURL: questions,
-    route: "/chat",
-    label: "Chat",
-  },
+
   {
     imgURL: gallery,
     route: "/gallery",
     label: "gallery",
   },
-  /*{
-      imgURL: "/assets/index/menu.svg",
-      label: "More",
-    }, */
+
 ];
 
 export const profileTabs = [
@@ -86,7 +79,6 @@ export const Faq = [
   },
 ]
 
-
 export const sidebarLinks = [
   {
     imgURL: home,
@@ -94,9 +86,9 @@ export const sidebarLinks = [
     label: "Posts",
   },
   {
-    imgURL: search,
-    route: "/community/search",
-    label: "Search",
+    imgURL: create,
+    route: "/community/create-post",
+    label: "Create Post",
   },
   {
     imgURL: heart,
@@ -104,14 +96,10 @@ export const sidebarLinks = [
     label: "Activity",
   },
   {
-    imgURL: create,
-    route: "/community/create-post",
-    label: "Create Post",
-  },
-  {
     imgURL: user,
     route: "/community/profile",
     label: "Profile",
   },
 ];
+
 

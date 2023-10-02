@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { subscribersValidation } from "@/lib/validation/subscribers";
+import { Fade } from "react-awesome-reveal";
 
 const SubscribeForm = () => {
   const form = useForm<z.infer<typeof subscribersValidation>>({
@@ -27,7 +28,7 @@ const SubscribeForm = () => {
     
   };
   return (
-    <div>
+    <Fade>
       <div className="mt-10">
         <h2 className="mt-4 text-center font-bold">Join Our Newsletter</h2>
         <p className="mt-2">
@@ -68,7 +69,7 @@ const SubscribeForm = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Fade>
   );
 };
 

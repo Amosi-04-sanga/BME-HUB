@@ -64,7 +64,7 @@ const CommunityTopnavbar = () => {
         <div className="mr-2">
           <SignedOut>
             <SignInButton>
-              <Button className="p-2 bg-indigo-500">sign in</Button>
+              <Button className="p-1 text-small-medium bg-indigo-500">sign in</Button>
             </SignInButton>
           </SignedOut>
         </div>
@@ -72,7 +72,7 @@ const CommunityTopnavbar = () => {
         <div className="mr-2">
           <SignedIn>
             <SignOutButton>
-              <Button className="p-2 bg-indigo-500">logout</Button>
+              <Button className="p-1 text-small-medium bg-indigo-500">logout</Button>
             </SignOutButton>
           </SignedIn>
         </div>

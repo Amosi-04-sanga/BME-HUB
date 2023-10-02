@@ -4,50 +4,71 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-
-
+import { createClient } from "contentful";
+import { Zoom } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
+import moment from "moment";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const News = () => {
   const [data, setData] = useState(null);
 
- /* useEffect(() => {
+  useEffect(() => {
     const getitems = async () => {
       const client = createClient({
         // This is the space ID. A space is like a project folder in Contentful terms
-        space: `uh943nb7fyjy`,
+        space: `kdi2o0v2k0w9`,
         // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-        accessToken: `TrQX1WSjs0OOu8MxtpGvmF07qmMbumXmRdIEkKAvbJw`,
+        accessToken: `4cs4zrA7stGMhhnyl9HGW6wRi6GrC6mFYuwuolTcXuA`,
       });
 
       const response = await client.getEntries();
       setData(response.items);
+
+      //  console.log(response.items)
     };
     getitems();
-  }, []);  */
+  }, []);
 
   return (
     <div className="mt-14 text-center">
-      <h2 className="font-bold inline-block half-underline">ONTREANDING</h2>
-      <p className="mt-4">
-        Be informed about upcoming and ontreanding events Level-up your team by
-        having expert-led Nest trainings or workshops. Get everyone up-to-speed
-        quickly.
-      </p>
-      
+      <h2 className="font-bold inline-block half-underline">NEWS</h2>
+      <Fade>
+        <p className="mt-4">
+          Be informed about upcoming and ontreanding events, here is just like
+          our dashboard for important up to date events.
+        </p>
+      </Fade>
 
-      <div className="flex flex-col mt-4">
-        <Image src={hero} alt="news" className="w-full h-[40vh] rounded-t-md" />
-        <div className="flex flex-col bg-white dark:bg-glassmorphism shadow-lg dark:shadow-gray-700 shadow-primary-500 rounded-b-md">
-          <h2 className="mt-4">Overview</h2>
-          <div className="flex flex-col text-left p-2">
-            <p>Date: To be held on 2, november 2023</p>
-            <p>Title: new technoloy to be released from facebook</p>
-          </div>
-          <Button className="bg-gradient-to-br from-green-600 to-blue-300 rounded-md block mx-auto mt-2 mb-4 text-black">
-            <Link href="#">Read More</Link>
-          </Button>
-        </div>
-      </div>
+      <Zoom scale={0.4}>
+        {data &&
+          data.map((each: any, index: any) => (
+            <div key={index} className="mt-8 h-[75vh] ">
+              <img
+                src={each.fields.featuredImage.fields.file.url}
+                alt="news featured image"
+                className="w-full max-h-[40vh] rounded-t-md"
+              />
+              <div className="flex flex-col bg-blue-100 border-slate-500 dark:bg-glassmorphism shadow-lg dark:shadow-gray-700 shadow-primary-500 rounded-b-md">
+                <h2 className="mt-4">Overview</h2>
+                <div className="flex flex-col text-left p-2">
+                  <p>
+                    {" "}
+                    <span className="font-bold">Title:</span>{" "}
+                    {each.fields.tItle}
+                  </p>
+                  <p className="text-blue-500 font-bold uppercase">
+                    {each.fields.eventDate &&
+                      moment(each.fields.eventDate).fromNow()}{" "}
+                  </p>
+                </div>
+                <Button className="bg-gradient-to-br from-green-600 to-blue-300 rounded-md block mx-auto mt-2 mb-4 text-black">
+                  <Link href={`/news/${each.sys.id}`}>Read More</Link>
+                </Button>
+              </div>
+            </div>
+          ))}
+      </Zoom>
     </div>
   );
 };
@@ -56,4 +77,9 @@ export default News;
 
 //   spaceID
 
-//   for published content.
+/*
+<div className="flex flex-col mt-4">
+        <Image src={hero} alt="news" className="w-full h-[40vh] rounded-t-md" />
+        
+      </div>
+*/
