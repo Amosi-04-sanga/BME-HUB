@@ -144,9 +144,9 @@ const page = ({ params }: { params: { id: string } }) => {
             | undefined;
         }[];
       }) => (
-        <Link className="text-red-700" href={node.data.uri}>
+        <a className="text-red-700" href={node.data.uri}>
           {node.content[0].value}
-        </Link>
+        </a>
       ),
     },
   };
