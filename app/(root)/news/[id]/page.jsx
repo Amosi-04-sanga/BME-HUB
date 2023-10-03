@@ -10,12 +10,11 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 
-const page = ({ params }: { params: { id: string } }) => {
+const page = ({ params }) => {
   const [data, setData] = useState(null);
   const router = useRouter()
-  const entry_id: string = params.id;
+  const entry_id = params.id;
 
-  const today = new Date();
 
   useEffect(() => {
     const getitems = async () => {
@@ -28,7 +27,7 @@ const page = ({ params }: { params: { id: string } }) => {
 
       client
         .getEntry(entry_id)
-        .then((entry: any) => {
+        .then((entry) => {
           setData(entry);
           // console.log(entry)
         })
@@ -39,9 +38,7 @@ const page = ({ params }: { params: { id: string } }) => {
 
   const options = {
     renderNode: {
-      "embedded-asset-block": (node: {
-        data: { target: { fields: { title: any; file: any } } };
-      }) => {
+      "embedded-asset-block": (node) => {
         const { title, file } = node.data.target.fields;
         const imageUrl = file.url;
         const altText = title || "";
@@ -54,108 +51,47 @@ const page = ({ params }: { params: { id: string } }) => {
           />
         );
       },
-      "embedded-entry-block": (node: any) => {
+      "embedded-entry-block": (node) => {
         // Handle other embedded entries, e.g., links to other Contentful content.
         // You can customize the rendering for different content types here.
         return null;
       },
       text: (
-        text:
-          | string
-          | number
-          | boolean
-          | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-          | Iterable<React.ReactNode>
-          | React.ReactPortal
-          | React.PromiseLikeOfReactNode
-          | null
-          | undefined
+        text
       ) => {
         // You can style text nodes here, e.g., adding CSS classes for headings.
         return <p>{text}</p>;
       },
-      "heading-1": (node: {
-        content: {
-          value:
-            | string
-            | number
-            | boolean
-            | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-            | Iterable<React.ReactNode>
-            | React.ReactPortal
-            | React.PromiseLikeOfReactNode
-            | null
-            | undefined;
-        }[];
-      }) => (
+      "heading-1": (node) => (
         <h1 className="text-center text-heading1-bold">
           {node.content[0].value}
         </h1>
       ),
-      "heading-2": (node: {
-        content: {
-          value:
-            | string
-            | number
-            | boolean
-            | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-            | Iterable<React.ReactNode>
-            | React.ReactPortal
-            | React.PromiseLikeOfReactNode
-            | null
-            | undefined;
-        }[];
-      }) => (
+      "heading-2": (node) => (
         <h2 className="text-center text-heading2-bold">
           {node.content[0].value}
         </h2>
       ),
-      "heading-3": (node: {
-        content: {
-          value:
-            | string
-            | number
-            | boolean
-            | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-            | Iterable<React.ReactNode>
-            | React.ReactPortal
-            | React.PromiseLikeOfReactNode
-            | null
-            | undefined;
-        }[];
-      }) => (
+      "heading-3": (node) => (
         <h3 className="text-heading3-bold text-center">
           {node.content[0].value}
         </h3>
       ),
       // Add more heading levels as needed.
-      hyperlink: (node: {
-        data: { uri: string | undefined };
-        content: {
-          value:
-            | string
-            | number
-            | boolean
-            | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-            | Iterable<React.ReactNode>
-            | React.ReactPortal
-            | React.PromiseLikeOfReactNode
-            | null
-            | undefined;
-        }[];
-      }) => (
-        <a className="text-red-700" href={node.data.uri}>
+      hyperlink: (node) => (
+        <Link className="text-red-700" href={node.data.uri}>
           {node.content[0].value}
-        </a>
+        </Link>
       ),
     },
   };
 
   return (
     <div className="block w-[95vw]">
-      <Button onClick={ () => router.back() } className="px-4 sticky top-0 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md mt-4 ml-4 text-black">
+      <Button onClick={ () => router.back() } className="px-4 sticky top-0 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md mt-8 ml-4 text-black">
         Back
       </Button>
+      
 
       {data ? (
         <div className=" mx-auto">

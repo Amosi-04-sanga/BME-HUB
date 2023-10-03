@@ -13,6 +13,7 @@ import {
 } from "@clerk/nextjs";
 import { Button } from "../ui/button";
 import { navLinks } from "@/constants";
+import { Fade, Slide } from "react-awesome-reveal";
 
 
 
@@ -27,14 +28,16 @@ const Topnav = () => {
     label,
     imgURL,
     isActive,
+    index,
   }: {
     route: string;
     label: string;
     imgURL: string;
     isActive: boolean;
+    index: number
   }) => {
     return (
-      <>
+      <Fade cascade={true} damping={index} >
         <Link
           href={route}
           onClick={() => setOpened(false)}
@@ -45,7 +48,7 @@ const Topnav = () => {
           <Image src={imgURL} alt={label} width={20} height={20} className="" />
           <p> {label} </p>
         </Link>
-      </>
+      </Fade>
     );
   };
 
@@ -97,11 +100,11 @@ const Topnav = () => {
         } transition-all duration-800 z-10 bg-menu-light dark:bg-menu-dark md:hidden top-[10vh] w-[80vw] sm:w-[65vw] h-[90vh] flex justify-start`}
       >
         <div className="flex flex-col gap-4 mt-10 ml-10">
-          {navLinks.map((link) => {
+          {navLinks.map((link, index) => {
             const isActive =
               (pathname.includes(link.route) && link.route.length > 1) ||
               pathname === link.route;
-            return <LinkItem key={link.label} isActive={isActive} {...link} />;
+            return <LinkItem key={link.label} index={index} isActive={isActive} {...link} />;
           })}
         </div>
       </div>

@@ -64,7 +64,7 @@ export const fetchPosts = async (pageNumber = 1, pageSize = 20) => {
   const skipAmount = (pageNumber - 1) * pageSize;
 
   // TODO: function to fetch posts from database...
-  const postQuery = Thread.find({ parentId: { $in: [undefined, null] } })
+  const posts = await Thread.find({ parentId: { $in: [undefined, null] } })
     .sort({ createdAt: "desc" })
     .skip(skipAmount)
     .limit(pageSize)
@@ -76,12 +76,12 @@ export const fetchPosts = async (pageNumber = 1, pageSize = 20) => {
         model: User,
         select: "_id name parentId image",
       },
-    });
+    }).exec()
 
   const totalPostsCount = Thread.countDocuments({
     parentId: { $in: [undefined, null] },
   });
-  const posts = await postQuery.exec();
+  
   const isNext = (await totalPostsCount) > skipAmount + posts.length;
   return { posts, isNext };
 };

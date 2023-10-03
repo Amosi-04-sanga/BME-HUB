@@ -25,9 +25,11 @@ import user from "./community/user.svg";
 import reply from "./community/reply.svg";
 import share from "./community/share.svg";
 import tag from "./community/tag.svg";
+import photos from "./home/photos.svg";
 
 
 export {
+  photos,
   tag,
   reply,
   share,

@@ -17,17 +17,16 @@ const PostCard = ({
   eventDate: Date;
   publishedDate: Date;
 }) => {
-  console.log(tItle);
 
   return (
     <>
-      <div className="w-[250px]">
+      <div className="w-[250px] dark:text-black">
         <img
           src={featuredImage.fields.file.url}
           alt="news featured image"
           className="w-full max-h-[20vh] rounded-t-md"
         />
-        <div className="flex flex-col bg-blue-100 border-slate-500 dark:bg-glassmorphism shadow-lg dark:shadow-gray-700 shadow-primary-500 rounded-b-md">
+        <div className="flex flex-col bg-blue-100 rounded-b-md">
           <h2 className="mt-2 text-center">Overview</h2>
           <div className="flex flex-col text-left p-2">
             <p>
@@ -37,7 +36,7 @@ const PostCard = ({
             <p className="text-blue-500 font-bold uppercase">
               {eventDate && moment(eventDate).fromNow()}{" "}
             </p>
-            <p className="text-[12px] mt-2 italic">
+            <p className="text-[13px] mt-2 italic">
               published on {publishedDate && moment(publishedDate).startOf('hour').fromNow() }{" "}
             </p>
           </div>

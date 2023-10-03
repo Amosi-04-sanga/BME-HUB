@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(auth)/sign-up/[[...page]]"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(auth)/sign-up/[[...page]]", "app/(root)/news/[id]/page.jsx", "components/blog/GalleryCard.jsx", "app/(root)/gallery/page.jsx", "app/(root)/news/page.jsx", "app/(root)/gallery/[id]/page.jsx"],
   "exclude": ["node_modules"]
 }

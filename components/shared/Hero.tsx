@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section className="relative h-[80vh] ">
       <div className="bg-[url('/assets/home/hero.jpg')] w-full h-full bg-cover bg-no-repeat bg-center">
-        <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-br from-green-900 to-black opacity-[.9]"></div>
+        <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-br from-green-900 to-black opacity-[.8]"></div>
         <div className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-col p-4 text-center mx-auto max-sm:w-[80vw]">
             <h2 className="font-bold text-heading1-bold text-news-bg">
