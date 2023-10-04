@@ -1,10 +1,8 @@
 import "../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 import Topnav from "@/components/shared/Topnav";
 import Sidebar from "@/components/shared/Sidebar";
-import { Bottombar } from "@/components/shared";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 
 
