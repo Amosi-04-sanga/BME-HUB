@@ -92,7 +92,7 @@ const page = ({ params }) => {
       </Button>
 
       {data ? (
-        <div className=" mx-auto w-[80vw] ml-4">
+        <div className=" mx-auto ml-4">
           <section className="mt-10">
             <h1 className="uppercase font-bold text-center text-heading2-bold">
               {" "}

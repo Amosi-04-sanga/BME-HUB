@@ -6,7 +6,7 @@ import Link from "next/link";
 const PostCard = ({ featuredImage, tItle, id, eventDate, publishedDate }) => {
   return (
     <>
-      <div className="w-[250px] dark:text-black">
+      <div style={{width: '300px', margin: '10px'}} className="dark:text-black bg-blue-300 rounded-md">
         <img
           src={featuredImage.fields.file.url}
           alt="news featured image"
@@ -27,7 +27,7 @@ const PostCard = ({ featuredImage, tItle, id, eventDate, publishedDate }) => {
               {publishedDate && moment(publishedDate).startOf("hour").fromNow()}{" "}
             </p>
           </div>
-          <Button className="px-1 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md block mx-auto mt-2 mb-4 text-black">
+          <Button style={{marginBottom: '15px'}} className="px-1 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md block mx-auto mt-2 text-black">
             <Link href={`/news/${id}`}>Read More</Link>
           </Button>
         </div>

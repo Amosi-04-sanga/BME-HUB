@@ -28,7 +28,7 @@ export const navLinks = [
   },
   {
     imgURL: library,
-    route: "/library",
+    route: "https://drive.google.com/drive/folders/15oIe1Nj-P3Ay7Pauesh-Btc7pAqRNqJ_",
     label: "Library",
   },
 

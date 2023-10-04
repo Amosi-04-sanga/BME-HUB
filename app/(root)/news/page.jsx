@@ -44,7 +44,7 @@ const events = () => {
           BME...
         </h3>
       ) : (
-        <div className="flex flex-wrap gap-5 mt-8 max-sm:justify-center">
+        <div style={{display: 'flex', flexWrap: 'wrap'}} className="mt-8 max-sm:justify-center">
           {data.map((item) => (
             <PostCard key={item.sys.id} id={item.sys.id} {...item.fields} />
           ))}
