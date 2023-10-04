@@ -18,7 +18,7 @@ const PostCard = ({ featuredImage, tItle, id, eventDate, publishedDate }) => {
           <div className="flex flex-col text-left p-2">
             <p>
               {" "}
-              <span className="font-bold mt-2">Title:</span> {tItle}
+              <span className="font-bold mt-2">{tItle}</span>
             </p>
             <p className="text-blue-500 font-bold uppercase">
               {eventDate && moment(eventDate).fromNow()}{" "}
