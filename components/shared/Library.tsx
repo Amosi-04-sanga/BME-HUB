@@ -31,7 +31,7 @@ const Library = () => {
           </p>
 
           <Button className="bg-gradient-to-r from-green-400 to-blue-500 rounded-md block mx-auto mt-10">
-            <Link href="/library">Open</Link>
+            <Link href="https://drive.google.com/drive/folders/15oIe1Nj-P3Ay7Pauesh-Btc7pAqRNqJ">Open</Link>
           </Button>
         </div>
       </Fade>

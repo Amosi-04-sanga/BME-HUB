@@ -28,7 +28,9 @@ const Hero = () => {
               id="news"
               className="bg-gradient-to-r from-green-400 to-blue-500 rounded-md block mx-auto mt-16"
             >
-              <Link href="/news">Library</Link>
+              <Link href="https://drive.google.com/drive/folders/15oIe1Nj-P3Ay7Pauesh-Btc7pAqRNqJ">
+                Library
+              </Link>
             </Button>
           </Slide>
         </div>
