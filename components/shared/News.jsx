@@ -1,6 +1,4 @@
 "use client";
-import { hero } from "@/public/assets";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
@@ -9,7 +7,6 @@ import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import moment from "moment";
 import { Fade, Slide } from "react-awesome-reveal";
-import { SectionWrapper } from "../../hoc";
 
 
 const News = () => {
@@ -43,13 +40,13 @@ const News = () => {
       <Zoom scale={0.4}>
         {data &&
           data.map((each, index) => (
-            <div key={index} className="mt-8 h-[75vh] ">
+            <div key={index} className="mt-8 py-4 h-[75vh] ">
               <img
                 src={each.fields.featuredImage.fields.file.url}
                 alt="news featured image"
                 className="w-full max-h-[40vh] rounded-t-md"
               />
-              <div className="flex flex-col bg-blue-100 border-slate-500 dark:bg-glassmorphism shadow-lg dark:shadow-gray-700 shadow-primary-500 rounded-b-md">
+              <div className="flex flex-col bg-blue-100 border-slate-500 dark:bg-glassmorphism shadow-lg dark:shadow-gray-700 shadow-primary-500 pb-4 rounded-b-md">
                 <h2 className="mt-4">Overview</h2>
                 <div className="flex flex-col text-left p-2">
                   <p>
@@ -62,7 +59,7 @@ const News = () => {
                       moment(each.fields.eventDate).fromNow()}{" "}
                   </p>
                 </div>
-                <Button className="bg-gradient-to-br from-green-600 to-blue-300 rounded-md block mx-auto mt-2 mb-4 text-black">
+                <Button style={{marginBottom: '10px'}} className="bg-gradient-to-br from-green-600 to-blue-300 rounded-md block mx-auto mt-2 text-black">
                   <Link href={`/news/${each.sys.id}`}>Read More</Link>
                 </Button>
               </div>

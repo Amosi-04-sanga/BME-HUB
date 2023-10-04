@@ -8,6 +8,7 @@ import Gallery from "@/components/shared/Gallery";
 import Library from "@/components/shared/Library";
 import OurVersion from "@/components/shared/OurVersion";
 
+
 export default function Home() {
   return (
     <>

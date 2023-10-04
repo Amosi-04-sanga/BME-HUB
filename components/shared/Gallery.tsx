@@ -10,7 +10,7 @@ const Gallery = () => {
   return (
     <section className="mt-20">
       <Fade>
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-10">
            <Image
              src={galleryhome}
              alt="gallery icon"
