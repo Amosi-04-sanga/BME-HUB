@@ -28,7 +28,7 @@ const News = () => {
   }, []);
 
   return (
-    <div id="about" className="mt-14 text-center">
+    <div id="about" className="mt-20 text-center">
       <h2 className="font-bold inline-block half-underline uppercase">Ontreandng NEWS</h2>
       <Fade>
         <p className="mt-4">

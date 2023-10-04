@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal";
 const OurVersion = () => {
   return (
     <>
-      <div className='dark:text-green-900 mt-0 bg-[url("/assets/home/blueBG.svg")] bg-center bg-no-repeat bg-cover py-20'>
+      <div className='dark:text-black mt-0 bg-[url("/assets/home/blueBG.svg")] bg-center bg-no-repeat bg-cover py-20'>
         <Fade>
           <div className="pb-10 mb-10 p-4 flex flex-col relative w-full bg-[url('/assets/home/bluebg.svg')] bg-cover bg-no-repeat bg-bottom">
             <h2 className="mt-4 text-center font-bold">OUR MISSION</h2>

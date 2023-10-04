@@ -8,7 +8,7 @@ import { galleryhome } from "@/public/assets";
 
 const Gallery = () => {
   return (
-    <section className="mt-20">
+    <section className="mt-20 dark:text-black">
       <Fade>
         <div className="flex flex-col mb-10">
            <Image

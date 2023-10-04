@@ -8,7 +8,7 @@ import { library } from "@/public/assets";
 
 const Library = () => {
   return (
-    <section className="mt-10">
+    <section className="mt-10 dark:text-black">
       <Fade>
         <div className="flex flex-col">
           <Image
