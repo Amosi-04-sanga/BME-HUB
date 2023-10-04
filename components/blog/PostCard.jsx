@@ -3,21 +3,7 @@ import { Button } from "../ui/button";
 import moment from "moment";
 import Link from "next/link";
 
-
-const PostCard = ({
-  featuredImage,
-  tItle,
-  id,
-  eventDate,
-  publishedDate,
-}: {
-  featuredImage: string;
-  tItle: string;
-  id: string;
-  eventDate: Date;
-  publishedDate: Date;
-}) => {
-
+const PostCard = ({ featuredImage, tItle, id, eventDate, publishedDate }) => {
   return (
     <>
       <div className="w-[250px] dark:text-black">
@@ -37,7 +23,8 @@ const PostCard = ({
               {eventDate && moment(eventDate).fromNow()}{" "}
             </p>
             <p className="text-[13px] mt-2 italic">
-              published on {publishedDate && moment(publishedDate).startOf('hour').fromNow() }{" "}
+              published on{" "}
+              {publishedDate && moment(publishedDate).startOf("hour").fromNow()}{" "}
             </p>
           </div>
           <Button className="px-1 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md block mx-auto mt-2 mb-4 text-black">
