@@ -27,7 +27,7 @@ const PostCard = ({ featuredImage, tItle, id, eventDate, publishedDate }) => {
               {publishedDate && moment(publishedDate).startOf("hour").fromNow()}{" "}
             </p>
           </div>
-          <Button style={{marginBottom: '15px'}} className="px-1 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md block mx-auto mt-2 text-black">
+          <Button style={{marginBottom: '15px'}} className="px-2 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md block mx-auto mt-2 text-black">
             <Link href={`/news/${id}`}>Read More</Link>
           </Button>
         </div>

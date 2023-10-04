@@ -30,7 +30,7 @@ const events = () => {
 
   return (
     <div className=" block w-[95vw] mx-auto p-4">
-      <div className="flex mt-8 items-center justify-start">
+      <div className="flex w-[100vw] mt-8 items-center justify-start">
         <Button
           onClick={() => router.back()}
           className="px-4 sticky top-0 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md ml-4 text-black"
