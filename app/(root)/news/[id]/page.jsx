@@ -9,12 +9,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
-
 const page = ({ params }) => {
   const [data, setData] = useState(null);
-  const router = useRouter()
+  const router = useRouter();
   const entry_id = params.id;
-
 
   useEffect(() => {
     const getitems = async () => {
@@ -56,9 +54,7 @@ const page = ({ params }) => {
         // You can customize the rendering for different content types here.
         return null;
       },
-      text: (
-        text
-      ) => {
+      text: (text) => {
         // You can style text nodes here, e.g., adding CSS classes for headings.
         return <p>{text}</p>;
       },
@@ -88,10 +84,12 @@ const page = ({ params }) => {
 
   return (
     <div className="block w-[95vw]">
-      <Button onClick={ () => router.back() } className="px-4 sticky top-0 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md mt-8 ml-4 text-black">
+      <Button
+        onClick={() => router.back()}
+        className="px-4 sticky top-0 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md mt-8 ml-4 text-black"
+      >
         Back
       </Button>
-      
 
       {data ? (
         <div className=" mx-auto w-[80vw] ml-4">
@@ -103,16 +101,19 @@ const page = ({ params }) => {
             <div className="flex gap-4 justify-between text-small-regular mt-2">
               <div>
                 <p className="italic">
-                 Published On: {moment(data.fields.publishedDate).format("MMM Do YYYY")}{" "}
+                  Published On:{" "}
+                  <span className="italic">
+                    {" "}
+                    {moment(data.fields.publishedDate).format(
+                      "MMM Do YYYY"
+                    )}{" "}
+                  </span>
                 </p>
               </div>
               <p>
-                <span className="font-bold text-blue-700 uppercase text-[17px] ">
+                <span className="font-bold text-blue-700 uppercase text-[14px] ">
                   {data.fields.eventDate && (
-                    <>
-                      {moment(data.fields.eventDate).fromNow()}{" "}
-                      <span className="text-black capitalize">Later</span>
-                    </>
+                    <>{moment(data.fields.eventDate).fromNow()} </>
                   )}
                 </span>{" "}
               </p>
