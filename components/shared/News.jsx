@@ -42,7 +42,7 @@ const News = () => {
 
       <Zoom scale={0.4}>
         {data &&
-          data.map((each: any, index: any) => (
+          data.map((each, index) => (
             <div key={index} className="mt-8 h-[75vh] ">
               <img
                 src={each.fields.featuredImage.fields.file.url}
