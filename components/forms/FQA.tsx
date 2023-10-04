@@ -9,6 +9,7 @@ import {
 import { Faq } from "@/constants";
 import { Fade } from "react-awesome-reveal";
 
+
 const FQA = () => {
   return (
     <Fade>
