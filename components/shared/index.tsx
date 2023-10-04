@@ -4,10 +4,7 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import LeftSidebar from "./LeftSidebar";
 import News from "./News";
-import ProfileHeader from "./ProfileHeader";
-import RightSidebar from "./RightSidebar";
 import Sidebar from "./Sidebar";
-import ThreadsTabs from "./ThreadsTabs";
 
 
 export {
@@ -18,7 +15,4 @@ export {
     About,
     Bottombar,
     LeftSidebar,
-    RightSidebar,
-    ThreadsTabs,
-    ProfileHeader
 }

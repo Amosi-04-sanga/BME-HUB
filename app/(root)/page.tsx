@@ -1,27 +1,29 @@
 import ContactForm from "@/components/forms/ContactForm";
 import FQA from "@/components/forms/FQA";
-import SubscribeForm from "@/components/forms/SubscribeForm";
 import About from "@/components/shared/About";
-import Community from "@/components/shared/Community";
 import Footer from "@/components/shared/Footer";
 import Hero from "@/components/shared/Hero";
 import News from "@/components/shared/News";
-import Image from "next/image";
-
+import Gallery from "@/components/shared/Gallery";
+import Library from "@/components/shared/Library";
+import OurVersion from "@/components/shared/OurVersion";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <OurVersion />
       <div className="max-xs:w-[90vw] max-sm:w-[85vw] max-md:w-[70vw] mx-auto md:p-16">
-        <News />
         <About />
+        <News />
       </div>
-      <Community />
+      <div className="bg-[#7EDAE7] p-4">
+        <Library />
+        <Gallery />
+      </div>
       <div className="max-xs:w-[90vw] max-sm:w-[85vw] max-md:w-[70vw] mx-auto md:p-16">
         <FQA />
         <ContactForm />
-        <SubscribeForm/>
       </div>
       <Footer />
     </>

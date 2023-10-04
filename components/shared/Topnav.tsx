@@ -5,12 +5,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  SignInButton,
-  SignOutButton,
-  SignedIn,
-  SignedOut,
-} from "@clerk/nextjs";
 import { Button } from "../ui/button";
 import { navLinks } from "@/constants";
 import { Fade, Slide } from "react-awesome-reveal";
@@ -37,7 +31,7 @@ const Topnav = () => {
     index: number
   }) => {
     return (
-      <Fade cascade={true} damping={index} >
+      <Fade cascade damping={index} >
         <Link
           href={route}
           onClick={() => setOpened(false)}
@@ -99,7 +93,7 @@ const Topnav = () => {
           !opened ? "-left-[80vw]" : "left-0"
         } transition-all duration-800 z-10 bg-menu-light dark:bg-menu-dark md:hidden top-[10vh] w-[80vw] sm:w-[65vw] h-[90vh] flex justify-start`}
       >
-        <div className="flex flex-col gap-4 mt-10 ml-10">
+        <div className="flex flex-col gap-8 mt-10 ml-10">
           {navLinks.map((link, index) => {
             const isActive =
               (pathname.includes(link.route) && link.route.length > 1) ||

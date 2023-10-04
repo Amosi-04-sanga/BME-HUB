@@ -94,17 +94,16 @@ const page = ({ params }) => {
       
 
       {data ? (
-        <div className=" mx-auto">
-          <section className="mt-10 w-[80vw] mx-auto ">
+        <div className=" mx-auto w-[80vw] ml-4">
+          <section className="mt-10">
             <h1 className="uppercase font-bold text-center text-heading2-bold">
               {" "}
               {data.fields.tItle}{" "}
             </h1>
             <div className="flex gap-4 justify-between text-small-regular mt-2">
               <div>
-                <p>Author: {data.fields.author} </p>
                 <p className="italic">
-                  On: {moment(data.fields.publishedDate).format("MMM Do YYYY")}{" "}
+                 Published On: {moment(data.fields.publishedDate).format("MMM Do YYYY")}{" "}
                 </p>
               </div>
               <p>

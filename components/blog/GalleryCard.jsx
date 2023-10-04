@@ -8,7 +8,7 @@ import { photos } from "@/public/assets";
 const GalleryCard = ({ images, title, date }) => {
   return (
     <>
-      <div className="w-[250px] my-10 block dark:text-black cursor-pointer bg-blue-300 hover:bg-blue-500 transition-all duration-300 rounded-md">
+      <div style={{padding: '10px', boxShadow: '1px 1px solid black'}} className="w-[250px] my-10 block dark:text-black cursor-pointer bg-blue-300 hover:bg-blue-500 transition-all duration-300 rounded-md">
         <div >
           <Image
             src={photos}

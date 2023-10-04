@@ -9,6 +9,8 @@ import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import moment from "moment";
 import { Fade, Slide } from "react-awesome-reveal";
+import { SectionWrapper } from "../../hoc";
+
 
 const News = () => {
   const [data, setData] = useState(null);
@@ -24,15 +26,13 @@ const News = () => {
 
       const response = await client.getEntries();
       setData(response.items);
-
-      //  console.log(response.items)
     };
     getitems();
   }, []);
 
   return (
-    <div className="mt-14 text-center">
-      <h2 className="font-bold inline-block half-underline">NEWS</h2>
+    <div id="about" className="mt-14 text-center">
+      <h2 className="font-bold inline-block half-underline uppercase">Ontreandng NEWS</h2>
       <Fade>
         <p className="mt-4">
           Be informed about upcoming and ontreanding events, here is just like

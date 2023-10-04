@@ -4,8 +4,13 @@ import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
+
+  const today = new Date()
+
   return (
-    <div className="mt-12 bg-footer-bg p-4 flex justify-between max-md:flex-col max-md:text-center text-white">
+    <div className=" text-white bg-footer-bg">
+
+    <div className="mt-12 p-4 flex justify-between max-md:flex-col max-md:text-center">
       <div className="flex flex-col gap-2 mt-10">
         <Link href="#">About us</Link>
         <Link href="#">News</Link>
@@ -13,7 +18,7 @@ const Footer = () => {
         <Link href="#">Community</Link>
       </div>
       <div className="flex flex-col mt-10 md:pl-6">
-        <h4 className="text-center text-light-2 uppercase">Social Medias</h4>
+        <h4 className="text-center text-light-2 uppercase">lets us connect</h4>
         <p className="mt-2">
           Follow us on our social medias for up to date informations BME HUB
         </p>
@@ -37,6 +42,8 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+    </div>
+      <p className="text-center pb-4"> @{today.getFullYear()} BME hub </p>
     </div>
   );
 };

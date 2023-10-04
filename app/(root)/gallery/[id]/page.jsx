@@ -34,20 +34,31 @@ const page = ({ params }) => {
   }, []);
 
   return (
-    <div className="mx-auto w-full mb-10">
-      <Button
-        onClick={() => router.back()}
-        className="px-4 sticky top-0 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md mt-8 ml-4 text-black"
-      >
-        Back
-      </Button>
+    <div style={{ margin: "auto" }} className="mx-auto w-full mb-10 p-4">
+      <div className="flex items-center">
+        <Button
+          onClick={() => router.back()}
+          className="px-4 sticky top-0 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md mt-8 ml-4 text-black"
+        >
+          Back
+        </Button>
+        <h3 className="flex-1 uppercase text-center">photos</h3>
+      </div>
 
       {data ? (
         <div className="mx-auto">
-          <section className="mt-10 flex flex-col items-center gap-5 mx-auto ">
-          {data.map((item, index) => (
-              <div className="w-full" key={index}>
-                <img src={item.fields.file.url} alt="photos" className="w-full max-h-[60vh]"/>
+          <section
+            style={{ display: "flex", flexWrap: "wrap" }}
+            className=" mt-10 mx-auto"
+          >
+            {data.map((item, index) => (
+              <div style={{ margin: "8px" }} className="w-full" key={index}>
+                <img
+                  src={item.fields.file.url}
+                  alt="photos"
+                  style={{ maxWidth: "300px", maxHeight: "300px" }}
+                  className="w-full"
+                />
               </div>
             ))}
           </section>
@@ -75,8 +86,5 @@ const client = contentful.createClient({
 client.getEntry('<entry_id>')
 .then((entry) => console.log(entry))
 .catch(console.error)
-
-
-
 
 */

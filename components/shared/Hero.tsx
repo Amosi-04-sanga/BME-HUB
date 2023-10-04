@@ -16,32 +16,33 @@ const Hero = () => {
             </h2>
             <Fade>
               <p className="mt-4 text-white">
-                We connect all biomedical personnels togother to make a
-                community that can learn, share and connect each other.
+                We connect all Biomedical Students together so as to make a
+                community that can share,learn and exchange various Biomedical
+                Engineering ideas and skills
               </p>
             </Fade>
           </div>
 
-          <Slide triggerOnce >
-            <Button className="bg-gradient-to-r from-green-400 to-blue-500 rounded-md block mx-auto mt-8">
-              <Link href="/community">Join Our Community </Link>
+          <Slide triggerOnce>
+            <Button
+              id="news"
+              className="bg-gradient-to-r from-green-400 to-blue-500 rounded-md block mx-auto mt-16"
+            >
+              <Link href="/news">Library</Link>
             </Button>
           </Slide>
-
         </div>
 
         <div className="cursor-pointer absolute -bottom-6 left-[50%] -translate-x-1/2 rounded-3xl w-[32px] h-[60px] border-4 bg-indigo-700 border-orange-200 p-2 flex items-center">
-          <Link href="#">
-            <motion.div
-              className="w-3 h-3 rounded-full bg-slate-50 mb-6"
-              animate={{ y: [0, 24, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-            ></motion.div>
-          </Link>
+          <motion.div
+            className="w-3 h-3 rounded-full bg-slate-50 mb-6"
+            animate={{ y: [0, 24, 0] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+          ></motion.div>
         </div>
       </div>
     </section>

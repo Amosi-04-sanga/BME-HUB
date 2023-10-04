@@ -30,7 +30,10 @@ const galley = () => {
   }, []);
 
   return (
-    <div className=" block w-full  mx-auto p-4">
+    <div
+      style={{ width: "100%", display: "flex", flexDirection: "column" }}
+      className="mx-auto p-4"
+    >
       <div className="flex mt-8 items-center justify-start">
         <Button
           onClick={() => router.back()}
@@ -48,9 +51,9 @@ const galley = () => {
           BME...
         </h3>
       ) : (
-        <div className="flex flex-col flex-wrap gap-5 mt-8 max-sm:justify-center">
+        <div style={{ display: "flex", flexWrap: "wrap" }} className="mt-8">
           {data.map((item) => (
-            <div key={item.sys.id}>
+            <div className="block" style={{ margin: "10px" }} key={item.sys.id}>
               <Link href={`/gallery/${item.sys.id}`}>
                 <GalleryCard {...item.fields} />
               </Link>
