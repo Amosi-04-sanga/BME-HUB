@@ -28,7 +28,7 @@ const Hero = () => {
               id="news"
               className="bg-gradient-to-r from-green-400 to-blue-500 rounded-md block mx-auto mt-16"
             >
-              <Link href="https://drive.google.com/drive/folders/15oIe1Nj-P3Ay7Pauesh-Btc7pAqRNqJ">
+              <Link href="https://drive.google.com/drive/folders/15oIe1Nj-P3Ay7Pauesh-Btc7pAqRNqJ_">
                 Library
               </Link>
             </Button>
