@@ -49,9 +49,8 @@ const News = () => {
               <div className="flex flex-col bg-blue-100 border-slate-500 dark:bg-glassmorphism shadow-lg dark:shadow-gray-700 shadow-primary-500 pb-4 rounded-b-md">
                 <h2 className="mt-4">Overview</h2>
                 <div className="flex flex-col text-left p-2">
-                  <p>
+                  <p className="font-bold">
                     {" "}
-                    <span className="font-bold">Title:</span>{" "}
                     {each.fields.tItle}
                   </p>
                   <p className="text-blue-500 font-bold uppercase">
