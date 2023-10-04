@@ -98,9 +98,9 @@ const page = ({ params }) => {
               {" "}
               {data.fields.tItle}{" "}
             </h1>
-            <div className="flex gap-4 justify-between text-small-regular mt-2">
+            <div style={{fontSize: '14px'}} className="flex gap-4 justify-between text-small-regular mt-2">
               <div>
-                <p className="italic text-[14px] ">
+                <p className="italic">
                   Published On:{" "}
                   <span className="italic">
                     {" "}

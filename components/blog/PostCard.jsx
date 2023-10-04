@@ -6,13 +6,14 @@ import Link from "next/link";
 const PostCard = ({ featuredImage, tItle, id, eventDate, publishedDate }) => {
   return (
     <>
-      <div style={{width: '300px', margin: '10px'}} className="dark:text-black bg-blue-300 rounded-md">
+      <div style={{width: '300px', margin: '10px', borderRadius: '14px'}} className="dark:text-black bg-blue-300 rounded-[20px] ">
         <img
           src={featuredImage.fields.file.url}
           alt="news featured image"
-          className="w-full max-h-[20vh] rounded-t-md"
+          style={{borderRadius: '14px'}}
+          className="w-full max-h-[20vh]"
         />
-        <div className="flex flex-col bg-blue-100 rounded-b-md">
+        <div className="flex flex-col bg-blue-100">
           <h2 className="mt-2 text-center">Overview</h2>
           <div className="flex flex-col text-left p-2">
             <p>
