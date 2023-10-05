@@ -13,16 +13,16 @@ const PostCard = ({ featuredImage, tItle, id, eventDate, publishedDate }) => {
           style={{borderRadius: '14px'}}
           className="w-full max-h-[20vh]"
         />
-        <div className="flex flex-col bg-blue-100">
+        <div className="flex flex-col bg-blue-100 text-center">
           <div className="flex flex-col text-left p-2">
-            <p>
+            <p style={{textAlign: 'center'}}>
               {" "}
               <span className="font-bold mt-4">{tItle}</span>
             </p>
             <p className="text-blue-500 font-bold uppercase">
               {eventDate && moment(eventDate).fromNow()}{" "}
             </p>
-            <p className="text-[13px] mt-2 italic">
+            <p style={{fontSize: '14px', fontStyle: 'italic'}}>
               published on{" "}
               {publishedDate && moment(publishedDate).startOf("hour").fromNow()}{" "}
             </p>
