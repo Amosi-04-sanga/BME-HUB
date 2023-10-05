@@ -1,7 +1,7 @@
 "use client";
-import GalleryCard from "@/components/blog/GalleryCard";
 import { Button } from "@/components/ui/button";
 import { createClient } from "contentful";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -29,19 +29,19 @@ const galley = () => {
     getitems();
   }, []);
 
+
   return (
     <div
       style={{ width: "100%", display: "flex", flexDirection: "column" }}
       className="mx-auto p-4"
     >
-      <div className="flex mt-8 items-center justify-start">
+      <div className="flex mt-4 items-center justify-start">
         <Button
           onClick={() => router.back()}
-          className="px-4 sticky top-0 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md ml-4 text-black"
+          className="px-4 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md ml-4 text-black"
         >
           Back
         </Button>
-        
       </div>
 
       {!data ? (
@@ -51,9 +51,17 @@ const galley = () => {
       ) : (
         <div style={{ display: "flex", flexWrap: "wrap" }} className="mt-8">
           {data.map((item) => (
-            <div className="block" style={{ margin: "10px", width: '260px' }} key={item.sys.id}>
+            <div
+              className="block"
+              style={{ margin: "5px", width: "150px" }}
+              key={item.sys.id}
+            >
               <Link href={`/gallery/${item.sys.id}`}>
-                <GalleryCard {...item.fields} />
+                <img
+                  src={item.fields.image[0].fields.file.url}
+                  alt="photo"
+                  className="w-full"
+                />
               </Link>
             </div>
           ))}
