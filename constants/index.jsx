@@ -35,7 +35,7 @@ export const navLinks = [
   {
     imgURL: gallery,
     route: "/gallery",
-    label: "gallery",
+    label: "Gallery",
   },
 ];
 

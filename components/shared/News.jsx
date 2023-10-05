@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { createClient } from "contentful";
 import { Zoom } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
+import 'react-slideshow-image/dist/styles.css'
 import moment from "moment";
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade,} from "react-awesome-reveal";
 
 
 const News = () => {

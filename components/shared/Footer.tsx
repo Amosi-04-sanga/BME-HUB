@@ -12,12 +12,10 @@ const Footer = () => {
 
     <div className="mt-12 p-4 flex justify-between max-md:flex-col max-md:text-center">
       <div className="flex flex-col gap-2 mt-10">
-        <Link href="#">About us</Link>
-        <Link href="#">News</Link>
-        <Link href="#">Galley</Link>
-        <Link href="#">Community</Link>
+        <Link href="/news">News</Link>
+        <Link href="/gallery">Galley</Link>
       </div>
-      <div className="flex flex-col mt-10 md:pl-6">
+      <div className="flex flex-col mt-10 md:px-10">
         <h4 className="text-center text-light-2 uppercase">lets us connect</h4>
         <p className="mt-2">
           Follow us on our social medias for up to date informations BME HUB

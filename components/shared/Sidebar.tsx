@@ -41,7 +41,7 @@ const Sidebar = () => {
        <div
           className={`sticky top-[10vh] min-w-[30vw] bg-menu-light dark:bg-menu-dark w-fit h-[90vh] flex justify-center`}
         >
-          <div className="flex flex-col gap-4 mt-10 ml-4">
+          <div className="flex flex-col gap-10 mt-10 ml-4">
             {navLinks.map((link) => {
               const isActive = (pathname.includes(link.route) && link.route.length > 1 ) || pathname === link.route;
               return (
