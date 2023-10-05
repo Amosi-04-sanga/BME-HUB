@@ -51,11 +51,11 @@ const page = ({ params }) => {
             className=" mt-10 mx-auto"
           >
             {data.map((item, index) => (
-              <div style={{ margin: "8px" }} className="cursor-pointer" key={index}>
+              <div style={{ margin: "2px" }} className="cursor-pointer" key={index}>
                 <img
                   src={item.fields.file.url}
                   alt="photos"
-                  style={{ maxWidth: "160px", maxHeight: "160px" }}
+                  style={{ maxWidth: "150px", maxHeight: "150px" }}
                   className="w-full"
                 />
               </div>
