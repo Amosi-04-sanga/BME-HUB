@@ -55,7 +55,7 @@ const page = ({ params }) => {
                 <img
                   src={item.fields.file.url}
                   alt="photos"
-                  style={{ maxWidth: "150px", height: "150px" }}
+                  style={{ maxWidth: "150px", maxHeight: "150px" }}
                   className="w-full"
                 />
               </div>
