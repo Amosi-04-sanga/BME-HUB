@@ -42,21 +42,20 @@ const page = ({ params }) => {
         >
           Back
         </Button>
-        <h3 className="flex-1 uppercase text-center">photos</h3>
       </div>
 
       {data ? (
         <div className="mx-auto">
           <section
-            style={{ display: "flex", flexWrap: "wrap" }}
+            style={{ display: "flex", flexWrap: "wrap"}}
             className=" mt-10 mx-auto"
           >
             {data.map((item, index) => (
-              <div style={{ margin: "8px" }} className="w-full" key={index}>
+              <div style={{ margin: "8px" }} className="cursor-pointer" key={index}>
                 <img
                   src={item.fields.file.url}
                   alt="photos"
-                  style={{ maxWidth: "300px", maxHeight: "300px" }}
+                  style={{ maxWidth: "160px", maxHeight: "160px" }}
                   className="w-full"
                 />
               </div>

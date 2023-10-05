@@ -43,9 +43,10 @@ const page = ({ params }) => {
 
         return (
           <img
-            className="max-w-[60vw] mx-auto my-2"
+            className="max-w-[60vw] mx-auto"
             src={imageUrl}
             alt={altText}
+            style={{margin: '16px auto'}}
           />
         );
       },
@@ -94,7 +95,7 @@ const page = ({ params }) => {
       {data ? (
         <div className=" mx-auto p-4">
           <section className="mt-10">
-            <h1 className="uppercase font-bold text-center text-heading2-bold">
+            <h1 style={{fontSize: '30px'}} className="uppercase font-bold text-center">
               {" "}
               {data.fields.tItle}{" "}
             </h1>
@@ -111,7 +112,7 @@ const page = ({ params }) => {
                 </p>
               </div>
               <p>
-                <span className="font-bold text-blue-700 uppercase text-[14px] ">
+                <span style={{color: 'green'}} className="font-bold uppercase text-[14px] ">
                   {data.fields.eventDate && (
                     <>{moment(data.fields.eventDate).fromNow()} </>
                   )}

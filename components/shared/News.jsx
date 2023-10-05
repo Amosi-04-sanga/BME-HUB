@@ -40,20 +40,19 @@ const News = () => {
       <Zoom scale={0.4}>
         {data &&
           data.map((each, index) => (
-            <div key={index} className="mt-8 py-4 max-w-[400px] h-[75vh] ">
+            <div style={{maxWidth: '400px'}} key={index} className="mt-8 py-4 h-[75vh] rounded-2xl">
               <img
                 src={each.fields.featuredImage.fields.file.url}
                 alt="news featured image"
-                className="w-full max-h-[40vh] rounded-t-md"
+                className="w-full max-h-[40vh] rounded-t-xl"
               />
-              <div className="flex flex-col bg-blue-100 border-slate-500 dark:bg-glassmorphism shadow-lg dark:shadow-gray-700 shadow-primary-500 pb-4 rounded-b-md">
-                <h2 className="mt-4">Overview</h2>
-                <div className="flex flex-col text-left p-2">
-                  <p className="font-bold">
+              <div className="flex flex-col text-center bg-blue-100 border-slate-500 dark:bg-glassmorphism shadow-lg dark:shadow-gray-700 shadow-primary-500 pb-4 rounded-b-md">
+                <div className="flex flex-col p-2">
+                  <p className="font-bold mt-4">
                     {" "}
                     {each.fields.tItle}
                   </p>
-                  <p className="text-blue-500 font-bold uppercase">
+                  <p style={{color: 'green'}} className="font-bold uppercase">
                     {each.fields.eventDate &&
                       moment(each.fields.eventDate).fromNow()}{" "}
                   </p>

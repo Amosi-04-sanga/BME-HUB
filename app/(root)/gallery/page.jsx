@@ -41,9 +41,7 @@ const galley = () => {
         >
           Back
         </Button>
-        <h1 className="flex-1 font-bold text-center text-heading3-bold">
-          Gallery
-        </h1>
+        
       </div>
 
       {!data ? (
@@ -53,7 +51,7 @@ const galley = () => {
       ) : (
         <div style={{ display: "flex", flexWrap: "wrap" }} className="mt-8">
           {data.map((item) => (
-            <div className="block" style={{ margin: "10px" }} key={item.sys.id}>
+            <div className="block" style={{ margin: "10px", width: '260px' }} key={item.sys.id}>
               <Link href={`/gallery/${item.sys.id}`}>
                 <GalleryCard {...item.fields} />
               </Link>
