@@ -37,7 +37,6 @@ const events = () => {
         >
           Back
         </Button>
-        <h1 className="flex-1 font-bold text-center text-heading3-bold">All News</h1>
       </div>
       {!data ? (
         <h3 className="fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] font-Bold">

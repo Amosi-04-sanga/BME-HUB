@@ -14,11 +14,10 @@ const PostCard = ({ featuredImage, tItle, id, eventDate, publishedDate }) => {
           className="w-full max-h-[20vh]"
         />
         <div className="flex flex-col bg-blue-100">
-          <h2 className="mt-2 text-center">Overview</h2>
           <div className="flex flex-col text-left p-2">
             <p>
               {" "}
-              <span className="font-bold mt-2">{tItle}</span>
+              <span className="font-bold mt-4">{tItle}</span>
             </p>
             <p className="text-blue-500 font-bold uppercase">
               {eventDate && moment(eventDate).fromNow()}{" "}
