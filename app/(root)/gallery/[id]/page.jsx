@@ -47,7 +47,7 @@ const page = ({ params }) => {
       {data ? (
         <div className="mx-auto">
           <section
-            style={{ display: "flex", flexWrap: "wrap"}}
+            style={{ display: "flex", flexWrap: "wrap", justifyItems: 'center'}}
             className=" mt-10 mx-auto"
           >
             {data.map((item, index) => (
