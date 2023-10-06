@@ -27,14 +27,14 @@ import share from "./community/share.svg";
 import tag from "./community/tag.svg";
 import mission from "./home/mission.png";
 import galleryhome from "./home/galleryhome.svg";
-import version from "./home/version.png";
+import vision from "./home/vision.png";
 import photos from "./home/photos.svg";
 import blueBG from "./home/blueBG.svg";
 
 
 export {
   blueBG,
-  version,
+  vision,
   galleryhome,
   mission,
   photos,

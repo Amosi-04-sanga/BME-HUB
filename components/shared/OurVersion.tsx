@@ -3,6 +3,8 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Fade } from "react-awesome-reveal";
+import Image from "next/image";
+import { mission, vision } from "@/public/assets";
 
 const OurVersion = () => {
   return (
@@ -10,6 +12,13 @@ const OurVersion = () => {
       <div className='dark:text-black mt-0 bg-[url("/assets/home/blueBG.svg")] bg-center bg-no-repeat bg-cover py-20'>
         <Fade>
           <div className="pb-10 lg:px-40 sm:p-10 mb-10 p-4 py-10 flex flex-col relative w-full bg-[url('/assets/home/bluebg.svg')] bg-cover bg-no-repeat bg-bottom">
+          <Image
+            src={mission}
+            alt="mission icon"
+            width={100}
+            height={100}
+            className="block mx-auto"
+          />
             <h2 className="mt-4 text-center font-bold">OUR MISSION</h2>
             <p className="mt-4 indent-4">
               To promote and encourage advanced health facilities for all people
@@ -30,7 +39,14 @@ const OurVersion = () => {
 
         <Fade>
           <div className="flex lg:px-40 sm:p-10 flex-col mt-10 p-4">
-            <h4 className="text-center uppercase font-bold">our vision</h4>
+          <Image
+            src={vision}
+            alt="vision icon"
+            width={100}
+            height={100}
+            className="block mx-auto"
+            />
+            <h4 className="text-center mt-4 uppercase font-bold">our vision</h4>
             <div className="mt-4">
               <p className="indent-4">
                 To expose Biomedical Engineering across the horizons of the
