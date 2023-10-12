@@ -14,9 +14,9 @@ export default function Home() {
     <>
       <Hero />
       <OurVersion />
-      <div className="max-xs:w-[90vw] max-sm:w-[85vw] max-md:w-[70vw] mx-auto sm:px-20 lg:px-32">
+      <div className="max-xs:w-[90vw] max-sm:w-[85vw] md:px-20 mx-auto lg:px-32">
         <About />
-        <div className="md:hidden">
+        <div className="sm:hidden">
           <News />
         </div>
       </div>
@@ -24,7 +24,7 @@ export default function Home() {
         <Library />
         <Gallery />
       </div>
-      <div className="max-xs:w-[90vw] sm:px-20 mx-auto lg:px-32">
+      <div className="max-xs:w-[90vw] max-sm:w-[85vw] sm:px-20 mx-auto lg:px-32">
         <FQA />
         <ContactForm />
       </div>
@@ -32,3 +32,4 @@ export default function Home() {
     </>
   );
 }
+

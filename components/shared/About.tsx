@@ -13,7 +13,7 @@ const About = () => {
               About us
             </h1>
           </div>
-          <p className="mt-6 indent-4">
+          <p className="mt-6 indent-4 pb-10">
             We are students of Biomedical Engineering studying from Muhimbili
             University of Health And Allied Science wanting to connect all
             Biomedical students from various Institutions to form a community

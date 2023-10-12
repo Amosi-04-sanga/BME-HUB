@@ -40,7 +40,7 @@ const News = () => {
       <Zoom scale={0.4}>
         {data &&
           data.map((each, index) => (
-            <div style={{maxWidth: '400px'}} key={index} className="mt-8 py-4 h-[75vh] rounded-2xl">
+            <div key={index} className="mt-8 mx-auto py-4 h-[75vh] rounded-2xl">
               <img
                 src={each.fields.featuredImage.fields.file.url}
                 alt="news featured image"
