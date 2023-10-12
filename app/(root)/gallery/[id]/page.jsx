@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { close } from "@/public/assets";
 import Image from "next/image";
-import moment from "moment";
+
 
 const page = ({ params }) => {
   const [data, setData] = useState(null);
@@ -30,14 +30,14 @@ const page = ({ params }) => {
     };
     getitems();
   }, []);
-  console.log(data);
+  
 
   return (
     <div>
       <div className="fixed z-20 top-4 left-4 flex items-center">
         <Button
           onClick={() => router.back()}
-          className="px-4 sticky top-0 bg-gradient-to-br text-[12px] from-green-600 to-blue-300 rounded-md mt-4 ml-4 text-black"
+          className="px-4 sticky top-0 bg-slate-500 rounded-md mt-4 ml-4"
         >
           <Image src={close} alt="close menu" width={20} height={20} />
         </Button>
