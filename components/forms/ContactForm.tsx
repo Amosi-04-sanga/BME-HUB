@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { contactValidation } from "@/lib/validation/contact";
@@ -17,22 +17,48 @@ import { Input } from "@/components/ui/input";
 import { subscribersValidation } from "@/lib/validation/subscribers";
 import { Textarea } from "../ui/textarea";
 import { Fade } from "react-awesome-reveal";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
+
   const form = useForm<z.infer<typeof contactValidation>>({
     resolver: zodResolver(contactValidation),
     defaultValues: {
       name: "",
       email: "",
+      message: ""
     },
   });
 
   const onSubmit = async (values: z.infer<typeof contactValidation>) => {
-    //e.preventDefault()
-    console.log(values);
-    form.reset();
-  };
+  
 
+    setLoading(true);
+
+    // emailjs
+    emailjs
+      .send(
+        "service_591517a",
+        "template_323tubp",
+        {
+          from_name: values.name,
+          to_name: "sanga amosi",
+          from_email: values.email,
+          to_email: "sangaamosi04@gmail.com",
+          message: values.message,
+        },
+        "skNoOkkBfsoNXwpTh"
+      )
+      .then(() => {
+        setLoading(false);
+        form.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("something went wrong!");
+      });
+  };
 
   return (
     <>
@@ -101,6 +127,7 @@ const ContactForm = () => {
                       <FormControl className="focus:outline-none">
                         <Textarea
                           rows={4}
+                          placeholder="Message"
                           className="outline-none border-none dark:bg-white"
                           {...field}
                         />
@@ -114,7 +141,7 @@ const ContactForm = () => {
                   type="submit"
                   className="bg-gradient-to-br from-green-600 to-blue-300 rounded-md block mx-auto mt-4 text-black"
                 >
-                  Send
+                  {loading ? "Sending" : "Send"}
                 </Button>
               </form>
             </Form>
