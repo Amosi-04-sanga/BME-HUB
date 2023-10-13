@@ -13,7 +13,11 @@ import {
   search,
   reply,
   tag,
+  fact1,
+  fact2,
 } from "../public/assets";
+
+export const imagesFacts = [{ url: fact1 }, { url: fact2 }];
 
 export const navLinks = [
   {
@@ -28,14 +32,19 @@ export const navLinks = [
   },
   {
     imgURL: library,
-    route: "https://drive.google.com/drive/folders/15oIe1Nj-P3Ay7Pauesh-Btc7pAqRNqJ_",
+    route:
+      "https://drive.google.com/drive/folders/15oIe1Nj-P3Ay7Pauesh-Btc7pAqRNqJ_",
     label: "Library",
   },
-
   {
     imgURL: gallery,
     route: "/gallery",
     label: "Gallery",
+  },
+  {
+    imgURL: gallery,
+    route: "/facts",
+    label: "Facts",
   },
 ];
 

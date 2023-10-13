@@ -20,7 +20,7 @@ const OurVersion = () => {
               className="block mx-auto"
             />
             <h2 className="mt-4 text-center font-bold">OUR MISSION</h2>
-            <p className="mt-4 indent-4 pb-20">
+            <p className="mt-4 indent-4 pb-10">
               Our mission is to promote and encourage advanced health facilities
               for all people all over the country through various Innovations
               and Projects and also through the knowledge and skills acquired
@@ -44,7 +44,7 @@ const OurVersion = () => {
             />
             <h4 className="text-center mt-4 uppercase font-bold">our vision</h4>
             <div className="mt-4">
-              <p className="indent-4 pb-20">
+              <p className="indent-4 pb-10">
                 Our vision is to expose Biomedical Engineering across the
                 horizons of the country so as to create good pathway for
                 upcoming engineers. We believe in helping each other with

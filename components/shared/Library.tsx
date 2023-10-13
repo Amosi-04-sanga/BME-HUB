@@ -25,13 +25,16 @@ const Library = () => {
             </h1>
           </div>
           <p className="mt-6 indent-4">
-            Books colection for biomedical engineering... Lorem, ipsum dolor sit
-            amet consectetur adipisicing elit. Dicta amet harum nobis
-            reiciendis. Ut quia temporibus corrupti quam in ipsam.
+            Books colection for biomedical engineering. Discover insightful book
+            reviews, author spotlights that will enrich your reading experience
+            and get insightful concepts. We believe that books have the power in
+            learning
           </p>
 
           <Button className="bg-gradient-to-r from-green-400 to-blue-500 rounded-md block mx-auto mt-10">
-            <Link href="https://drive.google.com/drive/folders/15oIe1Nj-P3Ay7Pauesh-Btc7pAqRNqJ_">Open</Link>
+            <Link href="https://drive.google.com/drive/folders/15oIe1Nj-P3Ay7Pauesh-Btc7pAqRNqJ_">
+              Open
+            </Link>
           </Button>
         </div>
       </Fade>

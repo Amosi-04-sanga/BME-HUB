@@ -57,7 +57,7 @@ const page = ({ params }) => {
       },
       text: (text) => {
         // You can style text nodes here, e.g., adding CSS classes for headings.
-        return <p className="mt-4" >{text}</p>;
+        return <p style={{paddingTop: '10px'}} className="mt-4" >{text}</p>;
       },
       "heading-1": (node) => (
         <h1 className="text-center text-heading1-bold">

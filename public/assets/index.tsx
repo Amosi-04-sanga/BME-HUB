@@ -30,9 +30,13 @@ import galleryhome from "./home/galleryhome.svg";
 import vision from "./home/vision.png";
 import photos from "./home/photos.svg";
 import blueBG from "./home/blueBG.svg";
+import fact1 from "./images/fact1.jpg";
+import fact2 from "./images/fact2.jpg";
 
 
 export {
+  fact1, 
+  fact2,
   blueBG,
   vision,
   galleryhome,
