@@ -41,11 +41,6 @@ export const navLinks = [
     route: "/gallery",
     label: "Gallery",
   },
-  {
-    imgURL: gallery,
-    route: "/facts",
-    label: "Facts",
-  },
 ];
 
 export const Faq = [
