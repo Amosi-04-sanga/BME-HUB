@@ -29,10 +29,10 @@ const News = () => {
 
   return (
     <div id="about" className="mt-20 text-center">
-      <h2 className="font-bold inline-block half-underline uppercase">Ontreandng NEWS</h2>
+      <h2 className="font-bold inline-block half-underline uppercase">On treandng NEWS</h2>
       <Fade>
         <p className="mt-4">
-          Be informed about upcoming and ontreanding events, here is just like
+          Be informed about upcoming and on treanding events, here is just like
           our dashboard for important up to date events.
         </p>
       </Fade>
