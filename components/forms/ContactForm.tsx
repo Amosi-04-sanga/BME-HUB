@@ -87,7 +87,7 @@ const ContactForm = () => {
                       <FormLabel className="dark:text-dark-1">Name</FormLabel>
                       <FormControl className="outline-none">
                         <Input
-                          className="outline-none border-none dark:bg-white"
+                          className="outline-none border-none text-dark-1 dark:bg-white"
                           placeholder="name"
                           {...field}
                         />
@@ -105,7 +105,7 @@ const ContactForm = () => {
                       <FormLabel className="dark:text-dark-1">Email</FormLabel>
                       <FormControl>
                         <Input
-                          className="outline-none border-none dark:bg-white"
+                          className="outline-none border-none text-dark-1 dark:bg-white"
                           type="email"
                           placeholder="Email"
                           {...field}
@@ -128,7 +128,7 @@ const ContactForm = () => {
                         <Textarea
                           rows={4}
                           placeholder="Message"
-                          className="outline-none border-none dark:bg-white"
+                          className="outline-none text-dark-1 border-none dark:bg-white"
                           {...field}
                         />
                       </FormControl>

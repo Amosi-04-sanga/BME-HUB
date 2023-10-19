@@ -25,7 +25,7 @@ const Library = () => {
             </h1>
           </div>
           <p className="mt-6 indent-4">
-            Books colection for biomedical engineering. Discover insightful book
+            Books collection for biomedical engineering. Discover insightful book
             reviews, author spotlights that will enrich your reading experience
             and get insightful concepts. We believe that books have the power in
             learning
